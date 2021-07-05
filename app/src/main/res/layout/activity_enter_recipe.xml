@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EnterRecipe">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fece2f"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/logo_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:text="CHEFGURU"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="40sp"
+            app:fontFamily="@font/bangers" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/recipe_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:hint="Recipe Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/erecipe_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHighlight="#FFFFFF">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-1dp"
+                android:layout_marginBottom="0.5dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="300dp"
+                        android:layout_height="57dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/spinner" />
+
+                    <android.widget.TextView
+                        android:id="@+id/tvInvisibleError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:paddingTop="0dp"
+                        android:paddingRight="20dp"
+                        android:layout_alignRight="@+id/spinner"
+                        android:layout_alignBaseline="@+id/spinner"/>
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="-15dp"
+                    android:onClick="onClickArraw"
+                    android:src="@drawable/ic_baseline_arrow_drop_down_circle_24">
+
+                </ImageView>
+
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/temp"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="#00000000"
+                android:visibility="gone"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/write_food"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="-1dp"
+                android:hint="@string/write_your_food_type">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ewrite_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ingredients"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Ingredients">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/eingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/description"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingBottom="10dp" />
+
+            <Button
+                android:id="@+id/select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn"
+                android:onClick="onClickSelect"
+                android:text="Select Image"
+                android:textColor="@android:color/black" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/progress_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp">
+
+            </androidx.core.widget.ContentLoadingProgressBar>
+
+            <Button
+                android:id="@+id/upload_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/btn"
+                android:onClick="onUploadClick"
+                android:text="Upload Recipe"
+                android:textColor="@android:color/black" />
+
+            <!-- <com.google.android.material.textfield.TextInputLayout
+
+                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="20dp"
+                 android:layout_marginTop="0dp"
+                 android:layout_marginRight="20dp"
+                 android:layout_marginBottom="-1dp">
+
+                 <com.google.android.material.textfield.TextInputEditText
+                     android:id="@+id/temp_text"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content">
+
+                 </com.google.android.material.textfield.TextInputEditText>
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+                     <Button
+                         android:id="@+id/temp_btn"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="20dp"
+                         android:layout_marginRight="20dp"
+                         android:layout_marginBottom="30dp"
+                         android:background="@drawable/btn"
+                         android:onClick="Temp"
+                         android:text="Show Description"
+                         android:textColor="@android:color/black" />
+
+                    <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/temp_text"
+                         android:layout_margin="20dp"
+                         android:text="ravi"/>-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
